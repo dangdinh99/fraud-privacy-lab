@@ -52,99 +52,21 @@ This project evaluates every model under those conditions.
 
 ## Results
 
-**The short version.** What differential privacy takes away from a fraud model is mostly its memory of recent, specific patterns, such as cards it has already seen. Right after training that memory is valuable, and DP removes it. Weeks later it has largely gone stale, so a model trained once pays little for privacy by then. Retraining is what keeps the memory fresh, and that is where privacy costs the most: without privacy, weekly retraining improves the neural network by +0.026; with DP the gain is about +0.006, and the gap between private and non-private models grows six-fold. **Privacy's real cost is losing the ability to keep a model fresh, not the drop you measure on day one.**
-
-All numbers: mean of 3 seeds never used for tuning. Recall is shown with its share of the ceiling in parentheses. DP rows report the target epsilon; the epsilon actually spent never exceeded it (delta = 1e-6, RDP accountant). Full record, including every decision and caveat: `docs/decisions.md`.
+**The short version.** What differential privacy takes away from a fraud model is mostly its memory of recent, specific patterns, such as cards it has already seen. That memory goes stale within weeks, so a model trained once pays little for privacy after a while. Retraining is what keeps it fresh, and that is where privacy costs the most. **Privacy's real cost is losing the ability to keep a model fresh, not the drop you measure on day one.**
 
 ![Privacy erases the benefit of retraining](docs/figures/05_privacy_erases_retraining_gain.png)
 
+Key findings (test period, mean of 3 seeds never used for tuning):
+
+- **Privacy takes away most of the benefit of retraining.** Weekly retraining improves the non-private neural network by +0.026 (share-of-ceiling score) but the DP one by only +0.006 to +0.009, so the private/non-private gap grows from 0.004 to 0.024.
+- **DP erases memory of known cards, and that memory fades anyway.** Right after training, DP at epsilon 1 removes 77% of catches on cards seen in training; about 40 days later even the non-private model catches only 6 of 488 such frauds.
+- **Under strict privacy, the simple model wins.** At epsilon 1 or less, logistic regression matched or beat the neural network in every evaluation.
+- **LightGBM is the strongest model** (0.775 vs about 0.70) and the only one that still recognizes known cards weeks later.
+- **Metrics and monitoring can mislead.** A single 1% alert budget hid a real gap between models, and input-drift monitoring stayed flat while performance swung week to week.
+
 ![DP erases memory of known cards, but that memory fades](docs/figures/04_card_memory_fades.png)
 
-### Stages 1 and 2: one-time test-set evaluation
-
-Test period: 42 days starting about 40 days after the end of training; 118,108 transactions, 4,064 frauds; ceilings 0.291 at 1% and 0.581 at 2%. Models are trained on the training period only.
-
-| Model | Epsilon | Recall @ 1% (share of ceiling) | Recall @ 2% (share of ceiling) | PR-AUC | Dollar loss @ 2% |
-|---|---|---|---|---|---|
-| LightGBM | none | 0.255 (0.875) | 0.392 (0.674) | 0.508 | $441k |
-| MLP | none | 0.227 (0.780) | 0.357 (0.613) | 0.445 | $463k |
-| MLP + DP-SGD | 8 | 0.236 (0.812) | 0.346 (0.595) | 0.425 | $479k |
-| MLP + DP-SGD | 4 | 0.236 (0.813) | 0.346 (0.595) | 0.424 | $482k |
-| MLP + DP-SGD | 2 | 0.239 (0.820) | 0.344 (0.592) | 0.421 | $481k |
-| MLP + DP-SGD | 1 | 0.237 (0.813) | 0.341 (0.587) | 0.412 | $489k |
-| MLP + DP-SGD | 0.5 | 0.236 (0.810) | 0.337 (0.579) | 0.401 | $491k |
-| Logistic regression | none | 0.233 (0.801) | 0.345 (0.593) | 0.433 | $475k |
-| Logistic regression + DP-SGD | 8 | 0.238 (0.818) | 0.349 (0.600) | 0.438 | $479k |
-| Logistic regression + DP-SGD | 4 | 0.238 (0.817) | 0.350 (0.601) | 0.430 | $482k |
-| Logistic regression + DP-SGD | 2 | 0.237 (0.814) | 0.347 (0.596) | 0.433 | $479k |
-| Logistic regression + DP-SGD | 1 | 0.236 (0.811) | 0.343 (0.590) | 0.428 | $479k |
-| Logistic regression + DP-SGD | 0.5 | 0.233 (0.803) | 0.339 (0.583) | 0.418 | $481k |
-
-For comparison, the validation period (the 40 days right after training, used for tuning; ceilings 0.256 and 0.512):
-
-<details>
-<summary>Validation results</summary>
-
-| Model | Epsilon | Recall @ 1% (share of ceiling) | Recall @ 2% (share of ceiling) | PR-AUC | Dollar loss @ 2% |
-|---|---|---|---|---|---|
-| LightGBM | none | 0.235 (0.918) | 0.429 (0.837) | 0.625 | $543k |
-| MLP | none | 0.236 (0.920) | 0.397 (0.775) | 0.562 | $581k |
-| MLP + DP-SGD | 8 | 0.234 (0.915) | 0.381 (0.744) | 0.519 | $622k |
-| MLP + DP-SGD | 4 | 0.233 (0.910) | 0.377 (0.735) | 0.512 | $629k |
-| MLP + DP-SGD | 2 | 0.233 (0.907) | 0.371 (0.725) | 0.504 | $634k |
-| MLP + DP-SGD | 1 | 0.230 (0.899) | 0.367 (0.716) | 0.490 | $646k |
-| MLP + DP-SGD | 0.5 | 0.228 (0.889) | 0.354 (0.690) | 0.472 | $653k |
-| Logistic regression | none | 0.234 (0.914) | 0.377 (0.735) | 0.521 | $618k |
-| Logistic regression + DP-SGD | 8 | 0.232 (0.906) | 0.377 (0.736) | 0.520 | $618k |
-| Logistic regression + DP-SGD | 4 | 0.231 (0.901) | 0.373 (0.729) | 0.503 | $628k |
-| Logistic regression + DP-SGD | 2 | 0.231 (0.902) | 0.377 (0.735) | 0.516 | $618k |
-| Logistic regression + DP-SGD | 1 | 0.231 (0.900) | 0.375 (0.732) | 0.511 | $621k |
-| Logistic regression + DP-SGD | 0.5 | 0.229 (0.893) | 0.366 (0.715) | 0.500 | $629k |
-
-</details>
-
-**What held on the later test period:**
-
-- **LightGBM is the strongest model by a clear margin** (selection score 0.775 vs about 0.70 for all others).
-- **Privacy costs the MLP recall** at the 2% budget and in PR-AUC, more as epsilon shrinks (PR-AUC 0.445 without DP, 0.425 at epsilon 8, 0.401 at epsilon 0.5).
-- **Under DP the simple model does as well as the neural network** at every epsilon.
-- **Calibration holds out of sample** (expected calibration error 0.004 to 0.006 for every model).
-
-**What changed between the two periods:**
-
-- **Card memory fades.** Right after training, the non-private MLP catches 70 of 763 frauds on cards seen in training, and DP at epsilon 1 removes 77% of those catches. About 40 days later it catches only 6 of 488, so there is little left for privacy to remove. LightGBM is the only model that still recognizes known cards weeks later (recall 0.16 vs 0.01).
-- **The 1% budget hid a difference that later appeared.** Right after training, the MLP tied LightGBM at a 1% budget (0.92 vs 0.92); later it did not (0.78 vs 0.88).
-- **The MLP's edge over logistic regression is gone later on,** with or without privacy (0.697 vs 0.697).
-- **Caveat:** on the test period some DP models score above their non-private versions. The DP MLP is above the non-private MLP at the 1% budget (0.81 to 0.82 vs 0.78) but below it at 2% and in PR-AUC. DP logistic regression at epsilon 2 to 8 is slightly above non-private logistic regression on all three (for example PR-AUC 0.438 vs 0.433 at epsilon 8). Post-hoc checks in stage 3 traced a similar effect to DP's gradient clipping, which limits the influence of outlier transactions under drift; it is not a benefit of privacy.
-
-![The 1% budget can hide differences](docs/figures/01_budget_hides_differences.png)
-
-![LightGBM still recognizes known cards weeks later](docs/figures/02_lightgbm_lead_is_card_memory.png)
-
-![Privacy cost vs epsilon](docs/figures/03_privacy_cost_vs_epsilon.png)
-
-### Stage 3: retraining under a fixed privacy budget (test period, run once)
-
-The test period (42 days) is replayed week by week. Each week is scored by the latest model; models are retrained never, or every 3, 2, or 1 weeks, using only labels at least 14 days old. Two strategies: **expanding** (retrain from scratch on all labeled data; every retrain reuses earlier transactions, so the total budget is split across retrains by RDP composition) and **disjoint** (fine-tune the previous model on new data only; each retrain gets the full budget). Score = average share of ceiling at 1% and 2% of each week's transactions, pooled over weeks; mean of 3 seeds (spread about 0.005). Every DP total stayed within its budget.
-
-| Schedule | Logistic regression | DP LR, total eps 8 | DP LR, total eps 2 | MLP | DP MLP, total eps 8 |
-|---|---|---|---|---|---|
-| Never retrain | 0.702 | 0.707 | 0.704 | 0.712 | 0.708 |
-| Expanding, every 3 weeks | 0.708 | 0.715 | 0.709 | 0.732 | 0.714 |
-| Expanding, every 2 weeks | 0.709 | 0.715 | 0.708 | 0.735 | 0.717 |
-| Expanding, weekly | 0.712 | 0.717 | 0.707 | 0.738 | 0.714 |
-| Disjoint, every 3 weeks | 0.694 | 0.710 | 0.701 | 0.720 | 0.710 |
-| Disjoint, every 2 weeks | 0.691 | 0.713 | 0.705 | 0.725 | 0.709 |
-| Disjoint, weekly | 0.685 | 0.712 | 0.702 | 0.724 | 0.708 |
-
-- **Privacy takes away most of the benefit of retraining the neural network.** Without privacy, weekly retraining improves the MLP by +0.026; with DP at total epsilon 8 the best schedule gains +0.009.
-- **Static evaluation understates the cost of privacy.** Never retrained, the DP MLP is 0.004 below the non-private MLP; with weekly retraining the gap is 0.024.
-- **The simple model keeps its retraining benefit at a loose budget** (+0.011 at total epsilon 8, as without privacy) but loses half of it at total epsilon 2.
-- **Retrain on all data, not only new data.** Expanding beats disjoint for every model; a full budget per retrain does not make up for training on one or two weeks of data.
-- **Input drift monitoring did not track performance.** Mean feature PSI per week stayed at 0.004 to 0.010 while weekly share of ceiling ranged from about 0.50 to 0.75.
-- **Caveat:** DP logistic regression scores slightly above non-private logistic regression on test. Post-hoc checks show this comes from gradient clipping (clipping alone adds +0.017; the privacy noise then costs about 0.008), not from privacy. It does not appear on validation. See `docs/decisions.md`.
-
-![Drift monitoring missed the performance swings](docs/figures/06_drift_monitoring_missed_it.png)
+Full tables, all six figures, the retraining experiment, and caveats (including why DP sometimes scores slightly above non-private training) are in the write-up: [`docs/writeup.md`](docs/writeup.md). Every decision, with its date and reason, is in [`docs/decisions.md`](docs/decisions.md).
 
 ## Repository layout
 
