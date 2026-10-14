@@ -1,0 +1,216 @@
+{
+  "replay_split": "test",
+  "final": true,
+  "rows": [
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "none",
+      "mean": 0.7038575176656572,
+      "std": 0.004329681921687548
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "expanding_every3",
+      "mean": 0.7092785174180524,
+      "std": 0.005839675827785335
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "expanding_every2",
+      "mean": 0.7075188560653677,
+      "std": 0.0016528960071377878
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "expanding_every1",
+      "mean": 0.7068127059406129,
+      "std": 0.0055138738701876015
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "disjoint_every3",
+      "mean": 0.7009678018398949,
+      "std": 0.0016777628956224301
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "disjoint_every2",
+      "mean": 0.704915671485439,
+      "std": 0.0032865850076187345
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "disjoint_every1",
+      "mean": 0.7018876897510617,
+      "std": 0.0020503845340865455
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "none",
+      "mean": 0.7066756899605737,
+      "std": 0.004870262922906489
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "expanding_every3",
+      "mean": 0.7149846199264803,
+      "std": 0.007817321532561237
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "expanding_every2",
+      "mean": 0.7150552706512009,
+      "std": 0.0010657027926269935
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "expanding_every1",
+      "mean": 0.717445967373293,
+      "std": 0.005313925798484309
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "disjoint_every3",
+      "mean": 0.7101216835228463,
+      "std": 0.002158148764668238
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "disjoint_every2",
+      "mean": 0.7125200583776164,
+      "std": 0.001041119262250535
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "disjoint_every1",
+      "mean": 0.7124490505304459,
+      "std": 0.002238466295728493
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "none",
+      "mean": 0.7077984234234235,
+      "std": 0.007712134632303159
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "expanding_every3",
+      "mean": 0.7139270017903739,
+      "std": 0.010080548065364896
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "expanding_every2",
+      "mean": 0.7170258128106966,
+      "std": 0.01172149376985121
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "expanding_every1",
+      "mean": 0.7136443988914919,
+      "std": 0.00958928112085587
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "disjoint_every3",
+      "mean": 0.7099093742262346,
+      "std": 0.011196049937489865
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "disjoint_every2",
+      "mean": 0.7085745100279984,
+      "std": 0.006296995395315386
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "disjoint_every1",
+      "mean": 0.7075186775041425,
+      "std": 0.006786652684327891
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "none",
+      "mean": 0.7020953564558216,
+      "std": 0.0032806114138046044
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "expanding_every3",
+      "mean": 0.7075168918918919,
+      "std": 0.0021943211898400846
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "expanding_every2",
+      "mean": 0.7092769103670266,
+      "std": 0.002755527304092649
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "expanding_every1",
+      "mean": 0.7116005275888998,
+      "std": 0.0032732391517709706
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "disjoint_every3",
+      "mean": 0.6942030098280099,
+      "std": 0.010102430283457432
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "disjoint_every2",
+      "mean": 0.6906822586328399,
+      "std": 0.006153794256135137
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "disjoint_every1",
+      "mean": 0.6845592156638668,
+      "std": 0.007546927263622571
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "none",
+      "mean": 0.7119689589166334,
+      "std": 0.005532511701298162
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "expanding_every3",
+      "mean": 0.7323205935851286,
+      "std": 0.002428510034100797
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "expanding_every2",
+      "mean": 0.7346418895110757,
+      "std": 0.0034361866298022485
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "expanding_every1",
+      "mean": 0.7378131368683695,
+      "std": 0.005313056175155674
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "disjoint_every3",
+      "mean": 0.7197116117174257,
+      "std": 0.0035990246319559365
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "disjoint_every2",
+      "mean": 0.7247815005809192,
+      "std": 0.006870539056584112
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "disjoint_every1",
+      "mean": 0.7235850808525227,
+      "std": 0.005682981954103786
+    }
+  ]
+}

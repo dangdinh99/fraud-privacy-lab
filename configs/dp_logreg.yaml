@@ -1,0 +1,28 @@
+# Stage 2 step 1: coarse DP-SGD search for logistic regression, seed 0 only. The
+# selected point per epsilon is re-run on fresh seeds for reporting (step 2).
+# See docs/decisions.md.
+name: dp_logreg
+stage: stage2
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val          # test only with --final
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]   # co-primary; ranked by mean share of ceiling over both
+ece_bins: 10
+device: cuda             # DP and MLP training on the GPU (see docs/decisions.md)
+seeds: [0]
+
+model:
+  type: dp_logreg
+  params:
+    hidden: []           # logistic regression: no hidden layers
+    weight_decay: 0.0
+    delta: 1.0e-6
+
+grid:
+  target_epsilon: [0.5, 1, 2, 4, 8]
+  max_grad_norm: [0.05, 0.2, 1.0]   # about 1/4x, 1x, 5x the trained median gradient norm
+  lr: [0.001, 0.003]
+  epochs: [5, 10]
+  batch_size: [1024, 4096]          # expected size under Poisson sampling

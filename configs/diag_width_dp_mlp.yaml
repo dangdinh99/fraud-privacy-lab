@@ -1,0 +1,22 @@
+# Stage 2 diagnostic: 64 -> 32 MLP at the selected epsilon = 1 setting, to check whether the
+# privacy cost depends on width. Compare with report_dp_mlp at epsilon = 1.
+name: diag_width_dp_mlp
+stage: stage2
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]
+ece_bins: 10
+device: cuda
+seeds: [10, 11, 12]
+model:
+  type: dp_mlp
+  params:
+    hidden: [64, 32]
+    weight_decay: 0.0
+    delta: 1.0e-06
+    batch_size: 1024
+points:
+- {target_epsilon: 1, max_grad_norm: 0.05, lr: 0.003, epochs: 20}

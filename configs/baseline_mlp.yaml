@@ -1,0 +1,23 @@
+# Stage 1: non-private MLP. Same architecture, sampling, optimizer, and schedule as the
+# DP-SGD MLP in stage 2; only clipping and noise will differ. See docs/decisions.md.
+name: baseline_mlp
+stage: stage1
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val          # test only with --final
+seeds: [0, 1, 2]
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]   # co-primary; ranked by mean share of ceiling over both
+ece_bins: 10
+
+model:
+  type: mlp
+  params:
+    hidden: [128, 64]
+    batch_size: 1024     # expected size under Poisson sampling
+    weight_decay: 0.0
+
+grid:
+  lr: [0.001, 0.0003]
+  epochs: [5, 10]

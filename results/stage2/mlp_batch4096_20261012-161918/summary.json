@@ -1,0 +1,22 @@
+{
+  "select_metric": "mean share of ceiling over select_budgets",
+  "select_budgets": [
+    0.01,
+    0.02
+  ],
+  "eval_split": "val",
+  "ranking": [
+    {
+      "grid_point": "lr=0.001__epochs=10",
+      "target_epsilon": null,
+      "mean": 0.8384296444600068,
+      "std": 0.0023307318789695173
+    },
+    {
+      "grid_point": "lr=0.0003__epochs=10",
+      "target_epsilon": null,
+      "mean": 0.8282023530175561,
+      "std": 0.0013872920292776424
+    }
+  ]
+}

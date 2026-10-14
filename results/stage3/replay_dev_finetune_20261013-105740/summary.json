@@ -1,0 +1,96 @@
+{
+  "replay_split": "val",
+  "final": false,
+  "rows": [
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "disjoint_every3",
+      "mean": 0.8007763246862084,
+      "std": 0.005575011598914843
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "disjoint_every2",
+      "mean": 0.8037347270632154,
+      "std": 0.005072127837831802
+    },
+    {
+      "experiment": "dp_logreg_eps2",
+      "schedule": "disjoint_every1",
+      "mean": 0.7995094327943165,
+      "std": 0.005420333267859824
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "disjoint_every3",
+      "mean": 0.8040860165133421,
+      "std": 0.0038787564127762525
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "disjoint_every2",
+      "mean": 0.807892227586995,
+      "std": 0.0021117543339859556
+    },
+    {
+      "experiment": "dp_logreg_eps8",
+      "schedule": "disjoint_every1",
+      "mean": 0.8027511523151057,
+      "std": 0.00295910984091166
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "disjoint_every3",
+      "mean": 0.8064078481229644,
+      "std": null
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "disjoint_every2",
+      "mean": 0.8100035355122565,
+      "std": null
+    },
+    {
+      "experiment": "dp_mlp_eps8",
+      "schedule": "disjoint_every1",
+      "mean": 0.8066208716644763,
+      "std": null
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "disjoint_every3",
+      "mean": 0.8059893006113935,
+      "std": 0.0013179805661487718
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "disjoint_every2",
+      "mean": 0.808874016722854,
+      "std": 0.00148239914137986
+    },
+    {
+      "experiment": "logreg",
+      "schedule": "disjoint_every1",
+      "mean": 0.7919762323105347,
+      "std": 0.0028814322056025785
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "disjoint_every3",
+      "mean": 0.8287378816448584,
+      "std": 0.006828776632704258
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "disjoint_every2",
+      "mean": 0.8343021470201702,
+      "std": 0.008942499715479337
+    },
+    {
+      "experiment": "mlp",
+      "schedule": "disjoint_every1",
+      "mean": 0.8343726191836657,
+      "std": 0.007798526799703813
+    }
+  ]
+}

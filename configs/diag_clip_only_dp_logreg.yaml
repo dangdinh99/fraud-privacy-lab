@@ -1,0 +1,23 @@
+# Stage 2 diagnostic: clipping with zero noise at the selected epsilon = 1 and 8 setting (identical for logistic regression).
+# NOT private (no noise, no epsilon). Splits the privacy cost into clipping and noise.
+name: diag_clip_only_dp_logreg
+stage: stage2
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]
+ece_bins: 10
+device: cuda
+seeds: [10, 11, 12]
+model:
+  type: dp_logreg
+  params:
+    hidden: []
+    weight_decay: 0.0
+    delta: 1.0e-06
+    batch_size: 1024
+    noise_multiplier: 0
+points:
+- {max_grad_norm: 5.0, lr: 0.003, epochs: 20}

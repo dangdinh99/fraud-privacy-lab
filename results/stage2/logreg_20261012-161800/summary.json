@@ -1,0 +1,58 @@
+{
+  "select_metric": "mean share of ceiling over select_budgets",
+  "select_budgets": [
+    0.01,
+    0.02
+  ],
+  "eval_split": "val",
+  "ranking": [
+    {
+      "grid_point": "lr=0.003__epochs=10__batch_size=1024",
+      "target_epsilon": null,
+      "mean": 0.8207969306847743,
+      "std": NaN
+    },
+    {
+      "grid_point": "lr=0.003__epochs=5__batch_size=1024",
+      "target_epsilon": null,
+      "mean": 0.8180474432039916,
+      "std": NaN
+    },
+    {
+      "grid_point": "lr=0.001__epochs=10__batch_size=1024",
+      "target_epsilon": null,
+      "mean": 0.8093736417256162,
+      "std": NaN
+    },
+    {
+      "grid_point": "lr=0.003__epochs=10__batch_size=4096",
+      "target_epsilon": null,
+      "mean": 0.803449864772261,
+      "std": NaN
+    },
+    {
+      "grid_point": "lr=0.001__epochs=5__batch_size=1024",
+      "target_epsilon": null,
+      "mean": 0.7922365601099294,
+      "std": NaN
+    },
+    {
+      "grid_point": "lr=0.003__epochs=5__batch_size=4096",
+      "target_epsilon": null,
+      "mean": 0.7831384936840017,
+      "std": NaN
+    },
+    {
+      "grid_point": "lr=0.001__epochs=10__batch_size=4096",
+      "target_epsilon": null,
+      "mean": 0.7757335487238755,
+      "std": NaN
+    },
+    {
+      "grid_point": "lr=0.001__epochs=5__batch_size=4096",
+      "target_epsilon": null,
+      "mean": 0.7454804147127208,
+      "std": NaN
+    }
+  ]
+}

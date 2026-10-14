@@ -1,0 +1,26 @@
+# Stage 1: LightGBM reference (non-private). See docs/decisions.md for the grid.
+name: baseline_lgbm
+stage: stage1
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val          # test only with --final
+seeds: [0, 1, 2]
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]   # co-primary; ranked by mean share of ceiling over both
+ece_bins: 10
+
+model:
+  type: lightgbm
+  params:
+    learning_rate: 0.05
+    min_child_samples: 100
+    feature_fraction: 0.5
+    bagging_fraction: 0.8
+    bagging_freq: 1
+    num_threads: 8
+    max_rounds: 3000
+    early_stopping_rounds: 100
+
+grid:
+  num_leaves: [31, 127]

@@ -1,0 +1,26 @@
+# Stage 2 step 2 (reported numbers): settings selected in docs/decisions.md, re-run on fresh
+# seeds {10, 11, 12} that were never used in selection. Validation only.
+name: report_dp_logreg
+stage: stage2
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]
+ece_bins: 10
+device: cuda
+seeds: [10, 11, 12]
+model:
+  type: dp_logreg
+  params:
+    hidden: []
+    weight_decay: 0.0
+    delta: 1.0e-06
+    batch_size: 1024
+points:
+- {target_epsilon: 0.5, max_grad_norm: 5.0, lr: 0.003, epochs: 20}
+- {target_epsilon: 1, max_grad_norm: 5.0, lr: 0.003, epochs: 20}
+- {target_epsilon: 2, max_grad_norm: 5.0, lr: 0.003, epochs: 20}
+- {target_epsilon: 4, max_grad_norm: 1.0, lr: 0.01, epochs: 10}
+- {target_epsilon: 8, max_grad_norm: 5.0, lr: 0.003, epochs: 20}

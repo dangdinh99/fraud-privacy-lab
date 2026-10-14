@@ -1,0 +1,79 @@
+# Shared preprocessing for every model (CLAUDE.md rule 2). Fit on train only.
+# Each value here is recorded in docs/decisions.md.
+
+exclude: [TransactionID, TransactionDT, isFraud, split]
+
+# Numeric columns with a larger share missing on train are dropped.
+max_missing_rate: 0.9
+
+# Columns with this prefix are pruned within each missingness pattern:
+# drop a column if |r| with an already kept column exceeds the threshold.
+prune_prefix: V
+prune_corr: 0.95
+
+# log1p before imputation (skewed, non-negative).
+log1p_columns: [TransactionAmt, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14]
+
+# Standardized columns are clipped to +/- this many train standard deviations.
+clip_sd: 5.0
+
+# Categorical columns, per the Kaggle data description.
+categorical:
+  - ProductCD
+  - card1
+  - card2
+  - card3
+  - card4
+  - card5
+  - card6
+  - addr1
+  - addr2
+  - P_emaildomain
+  - R_emaildomain
+  - M1
+  - M2
+  - M3
+  - M4
+  - M5
+  - M6
+  - M7
+  - M8
+  - M9
+  - DeviceType
+  - DeviceInfo
+  - id_12
+  - id_13
+  - id_14
+  - id_15
+  - id_16
+  - id_17
+  - id_18
+  - id_19
+  - id_20
+  - id_21
+  - id_22
+  - id_23
+  - id_24
+  - id_25
+  - id_26
+  - id_27
+  - id_28
+  - id_29
+  - id_30
+  - id_31
+  - id_32
+  - id_33
+  - id_34
+  - id_35
+  - id_36
+  - id_37
+  - id_38
+
+# One-hot: values below this share of train rows go to "other"; unseen values too.
+onehot_min_freq: 0.01
+
+# Frequency encoding: log(1 + train count of the value), standardized.
+frequency_columns: [card1, card2, addr1, DeviceInfo]
+
+# Sine and cosine of TransactionDT mod 86400 (offset unknown, still cyclic).
+hour_of_day: true

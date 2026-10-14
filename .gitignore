@@ -1,0 +1,33 @@
+# Data: raw and processed files stay local. data/splits/ (TransactionID lists) is committed.
+data/raw/**
+data/processed/**
+!data/**/
+!data/**/.gitkeep
+
+# Results: metrics JSON, configs, and env info are committed; model artifacts are not
+results/**/*.pt
+results/**/*.pkl
+results/**/*.joblib
+results/**/*.txt.model
+
+# Python / tooling
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+kaggle.json
+
+.DS_Store
+*.parquet
+*.pkl
+
+# Derived from Kaggle data: not published (regenerate; see docs/decisions.md, 2026-10-14)
+data/splits/split.csv.gz
+results/**/preprocessor.json

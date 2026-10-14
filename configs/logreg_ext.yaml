@@ -1,0 +1,22 @@
+# Stage 2 extension for non-private logistic regression (its best was also at the corner).
+name: logreg_ext
+stage: stage2
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]
+ece_bins: 10
+device: cuda
+seeds: [0]
+model:
+  type: logreg
+  params:
+    hidden: []
+    weight_decay: 0.0
+    batch_size: 1024
+points:
+- {lr: 0.003, epochs: 20}
+- {lr: 0.01, epochs: 10}
+- {lr: 0.01, epochs: 20}

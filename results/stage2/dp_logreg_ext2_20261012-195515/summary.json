@@ -1,0 +1,190 @@
+{
+  "select_metric": "mean share of ceiling over select_budgets",
+  "select_budgets": [
+    0.01,
+    0.02
+  ],
+  "eval_split": "val",
+  "ranking": [
+    {
+      "grid_point": "target_epsilon=0.5__max_grad_norm=5.0__lr=0.003__epochs=40",
+      "target_epsilon": 0.5,
+      "mean": 0.796468289685958,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=0.5__max_grad_norm=20.0__lr=0.003__epochs=20",
+      "target_epsilon": 0.5,
+      "mean": 0.795622086982549,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=0.5__max_grad_norm=20.0__lr=0.003__epochs=40",
+      "target_epsilon": 0.5,
+      "mean": 0.7746770036941484,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=0.5__max_grad_norm=20.0__lr=0.01__epochs=20",
+      "target_epsilon": 0.5,
+      "mean": 0.7676948915636079,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=0.5__max_grad_norm=5.0__lr=0.01__epochs=40",
+      "target_epsilon": 0.5,
+      "mean": 0.7626173173136617,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=0.5__max_grad_norm=20.0__lr=0.01__epochs=40",
+      "target_epsilon": 0.5,
+      "mean": 0.7266541499556401,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=1__max_grad_norm=5.0__lr=0.003__epochs=40",
+      "target_epsilon": 1,
+      "mean": 0.8091622253108233,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=1__max_grad_norm=20.0__lr=0.003__epochs=20",
+      "target_epsilon": 1,
+      "mean": 0.8053536865938721,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=1__max_grad_norm=20.0__lr=0.003__epochs=40",
+      "target_epsilon": 1,
+      "mean": 0.7888522863405304,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=1__max_grad_norm=20.0__lr=0.01__epochs=20",
+      "target_epsilon": 1,
+      "mean": 0.7886390797782794,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=1__max_grad_norm=5.0__lr=0.01__epochs=40",
+      "target_epsilon": 1,
+      "mean": 0.7795429825145557,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=1__max_grad_norm=20.0__lr=0.01__epochs=40",
+      "target_epsilon": 1,
+      "mean": 0.7550022090419631,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=2__max_grad_norm=5.0__lr=0.003__epochs=40",
+      "target_epsilon": 2,
+      "mean": 0.8142397995607695,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=2__max_grad_norm=20.0__lr=0.003__epochs=20",
+      "target_epsilon": 2,
+      "mean": 0.8097968325846936,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=2__max_grad_norm=20.0__lr=0.003__epochs=40",
+      "target_epsilon": 2,
+      "mean": 0.8028156155278823,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=2__max_grad_norm=5.0__lr=0.01__epochs=40",
+      "target_epsilon": 2,
+      "mean": 0.7990070768109311,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=2__max_grad_norm=20.0__lr=0.01__epochs=20",
+      "target_epsilon": 2,
+      "mean": 0.7935052376134327,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=2__max_grad_norm=20.0__lr=0.01__epochs=40",
+      "target_epsilon": 2,
+      "mean": 0.7702349317918016,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=4__max_grad_norm=5.0__lr=0.003__epochs=40",
+      "target_epsilon": 4,
+      "mean": 0.814451394990308,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=4__max_grad_norm=20.0__lr=0.003__epochs=20",
+      "target_epsilon": 4,
+      "mean": 0.8114892379915118,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=4__max_grad_norm=20.0__lr=0.003__epochs=40",
+      "target_epsilon": 4,
+      "mean": 0.8087393924812374,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=4__max_grad_norm=5.0__lr=0.01__epochs=40",
+      "target_epsilon": 4,
+      "mean": 0.8085272600074613,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=4__max_grad_norm=20.0__lr=0.01__epochs=20",
+      "target_epsilon": 4,
+      "mean": 0.7979490996632375,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=4__max_grad_norm=20.0__lr=0.01__epochs=40",
+      "target_epsilon": 4,
+      "mean": 0.783140999890443,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=8__max_grad_norm=5.0__lr=0.003__epochs=40",
+      "target_epsilon": 8,
+      "mean": 0.8163555748414109,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=8__max_grad_norm=5.0__lr=0.01__epochs=40",
+      "target_epsilon": 8,
+      "mean": 0.8129704059982829,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=8__max_grad_norm=20.0__lr=0.003__epochs=20",
+      "target_epsilon": 8,
+      "mean": 0.8123357987244126,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=8__max_grad_norm=20.0__lr=0.003__epochs=40",
+      "target_epsilon": 8,
+      "mean": 0.8119126078653351,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=8__max_grad_norm=20.0__lr=0.01__epochs=20",
+      "target_epsilon": 8,
+      "mean": 0.8019694128244732,
+      "std": NaN
+    },
+    {
+      "grid_point": "target_epsilon=8__max_grad_norm=20.0__lr=0.01__epochs=40",
+      "target_epsilon": 8,
+      "mean": 0.789911158561953,
+      "std": NaN
+    }
+  ]
+}

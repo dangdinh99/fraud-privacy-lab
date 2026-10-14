@@ -1,0 +1,1085 @@
+{
+  "experiment": {
+    "name": "dp_logreg_eps8",
+    "model": "dp_logreg",
+    "epsilon_total": 8
+  },
+  "summary": {
+    "select_score": {
+      "mean": 0.7150552706512009,
+      "std": 0.0010657027926269935
+    },
+    "epsilon_spent_total": {
+      "mean": 7.942746665456828,
+      "std": 0.0
+    },
+    "pooled.budget_0.01.n_windows": {
+      "mean": 6.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.01.n": {
+      "mean": 118108.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.01.n_fraud": {
+      "mean": 4064.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.01.n_flagged": {
+      "mean": 1184.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.01.frauds_flagged": {
+      "mean": 969.0,
+      "std": 3.0
+    },
+    "pooled.budget_0.01.recall": {
+      "mean": 0.23843503937007873,
+      "std": 0.0007381889763779514
+    },
+    "pooled.budget_0.01.recall_ceiling": {
+      "mean": 0.29133858267716534,
+      "std": 0.0
+    },
+    "pooled.budget_0.01.recall_share_of_ceiling": {
+      "mean": 0.8184121621621622,
+      "std": 0.0025337837837837718
+    },
+    "pooled.budget_0.01.precision": {
+      "mean": 0.8184121621621622,
+      "std": 0.0025337837837837718
+    },
+    "pooled.budget_0.01.dollar_loss": {
+      "mean": 526136.4646670023,
+      "std": 1160.6461591314455
+    },
+    "pooled.budget_0.01.fraud_dollars_total": {
+      "mean": 609934.3356752396,
+      "std": 0.0
+    },
+    "pooled.budget_0.02.n_windows": {
+      "mean": 6.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.02.n": {
+      "mean": 118108.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.02.n_fraud": {
+      "mean": 4064.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.02.n_flagged": {
+      "mean": 2365.0,
+      "std": 0.0
+    },
+    "pooled.budget_0.02.frauds_flagged": {
+      "mean": 1446.6666666666667,
+      "std": 11.015141094572204
+    },
+    "pooled.budget_0.02.recall": {
+      "mean": 0.3559711286089238,
+      "std": 0.002710418576420321
+    },
+    "pooled.budget_0.02.recall_ceiling": {
+      "mean": 0.5819389763779528,
+      "std": 0.0
+    },
+    "pooled.budget_0.02.recall_share_of_ceiling": {
+      "mean": 0.6116983791402396,
+      "std": 0.004657564944850813
+    },
+    "pooled.budget_0.02.precision": {
+      "mean": 0.6116983791402396,
+      "std": 0.004657564944850813
+    },
+    "pooled.budget_0.02.dollar_loss": {
+      "mean": 469796.896280845,
+      "std": 3718.7063137691152
+    },
+    "pooled.budget_0.02.fraud_dollars_total": {
+      "mean": 609934.3356752396,
+      "std": 0.0
+    }
+  },
+  "per_seed": {
+    "10": {
+      "model": "dp_logreg",
+      "strategy": "expanding",
+      "every_weeks": 2,
+      "n_runs": 3,
+      "setting_epsilon": 2.0,
+      "params": {
+        "hidden": [],
+        "weight_decay": 0.0,
+        "max_grad_norm": 5.0,
+        "lr": 0.003,
+        "epochs": 20,
+        "batch_size": 1024,
+        "delta": 1e-06,
+        "noise_multiplier": 0.62890625
+      },
+      "runs": [
+        {
+          "week": 0,
+          "label_window": [
+            null,
+            10983300
+          ],
+          "n_train": 434677,
+          "max_train_time": 10983287,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 8500,
+            "last_epoch_loss": 0.10135442149989746,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.561334957532638,
+              "delta": 1e-06,
+              "n_train": 434677,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.002352941176470588,
+              "expected_batch_size": 1022.7694117647058,
+              "epochs": 20,
+              "steps": 8500,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        },
+        {
+          "week": 2,
+          "label_window": [
+            null,
+            12192900
+          ],
+          "n_train": 472432,
+          "max_train_time": 12192842,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 9240,
+            "last_epoch_loss": 0.10302043330424275,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.356306946770964,
+              "delta": 1e-06,
+              "n_train": 472432,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.0021645021645021645,
+              "expected_batch_size": 1022.5800865800866,
+              "epochs": 20,
+              "steps": 9240,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        },
+        {
+          "week": 4,
+          "label_window": [
+            null,
+            13402500
+          ],
+          "n_train": 512470,
+          "max_train_time": 13402475,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 10020,
+            "last_epoch_loss": 0.10337415452816054,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.166390244711353,
+              "delta": 1e-06,
+              "n_train": 512470,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.001996007984031936,
+              "expected_batch_size": 1022.8942115768463,
+              "epochs": 20,
+              "steps": 10020,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        }
+      ],
+      "privacy": {
+        "epsilon_total": 8.0,
+        "epsilon_spent_total": 7.942746665456828,
+        "composition": "sequential (RDP)",
+        "delta": 1e-06
+      },
+      "per_week": [
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 18562,
+            "n_fraud": 640,
+            "n_flagged": 186,
+            "frauds_flagged": 133,
+            "recall": 0.2078125,
+            "recall_ceiling": 0.290625,
+            "recall_share_of_ceiling": 0.7150537634408602,
+            "precision": 0.7150537634408602,
+            "dollar_loss": 84222.09500265121,
+            "fraud_dollars_total": 94924.89198350906
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 18562,
+            "n_fraud": 640,
+            "n_flagged": 372,
+            "frauds_flagged": 197,
+            "recall": 0.3078125,
+            "recall_ceiling": 0.58125,
+            "recall_share_of_ceiling": 0.5295698924731183,
+            "precision": 0.5295698924731183,
+            "dollar_loss": 72834.95800638199,
+            "fraud_dollars_total": 94924.89198350906
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 21476,
+            "n_fraud": 663,
+            "n_flagged": 215,
+            "frauds_flagged": 186,
+            "recall": 0.28054298642533937,
+            "recall_ceiling": 0.32428355957767724,
+            "recall_share_of_ceiling": 0.8651162790697674,
+            "precision": 0.8651162790697674,
+            "dollar_loss": 73386.39889621735,
+            "fraud_dollars_total": 87649.69477653503
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 21476,
+            "n_fraud": 663,
+            "n_flagged": 430,
+            "frauds_flagged": 249,
+            "recall": 0.3755656108597285,
+            "recall_ceiling": 0.6485671191553545,
+            "recall_share_of_ceiling": 0.5790697674418605,
+            "precision": 0.5790697674418605,
+            "dollar_loss": 65435.25088787079,
+            "fraud_dollars_total": 87649.69477653503
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 19721,
+            "n_fraud": 560,
+            "n_flagged": 198,
+            "frauds_flagged": 149,
+            "recall": 0.26607142857142857,
+            "recall_ceiling": 0.3535714285714286,
+            "recall_share_of_ceiling": 0.7525252525252525,
+            "precision": 0.7525252525252525,
+            "dollar_loss": 69052.19599342346,
+            "fraud_dollars_total": 86573.58600854874
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 19721,
+            "n_fraud": 560,
+            "n_flagged": 395,
+            "frauds_flagged": 194,
+            "recall": 0.3464285714285714,
+            "recall_ceiling": 0.7053571428571429,
+            "recall_share_of_ceiling": 0.49113924050632907,
+            "precision": 0.4911392405063291,
+            "dollar_loss": 63806.4399638176,
+            "fraud_dollars_total": 86573.58600854874
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 21096,
+            "n_fraud": 741,
+            "n_flagged": 211,
+            "frauds_flagged": 175,
+            "recall": 0.23616734143049933,
+            "recall_ceiling": 0.28475033738191635,
+            "recall_share_of_ceiling": 0.8293838862559242,
+            "precision": 0.8293838862559242,
+            "dollar_loss": 88460.31187820435,
+            "fraud_dollars_total": 101894.3999555111
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 21096,
+            "n_fraud": 741,
+            "n_flagged": 422,
+            "frauds_flagged": 247,
+            "recall": 0.3333333333333333,
+            "recall_ceiling": 0.5695006747638327,
+            "recall_share_of_ceiling": 0.5853080568720378,
+            "precision": 0.5853080568720379,
+            "dollar_loss": 81999.52588272095,
+            "fraud_dollars_total": 101894.3999555111
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 19928,
+            "n_fraud": 743,
+            "n_flagged": 200,
+            "frauds_flagged": 174,
+            "recall": 0.23418573351278602,
+            "recall_ceiling": 0.2691790040376851,
+            "recall_share_of_ceiling": 0.87,
+            "precision": 0.87,
+            "dollar_loss": 94824.58778762817,
+            "fraud_dollars_total": 110602.84379768372
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 19928,
+            "n_fraud": 743,
+            "n_flagged": 399,
+            "frauds_flagged": 293,
+            "recall": 0.3943472409152086,
+            "recall_ceiling": 0.5370121130551817,
+            "recall_share_of_ceiling": 0.7343358395989975,
+            "precision": 0.7343358395989975,
+            "dollar_loss": 84018.65679121017,
+            "fraud_dollars_total": 110602.84379768372
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 17325,
+            "n_fraud": 717,
+            "n_flagged": 174,
+            "frauds_flagged": 155,
+            "recall": 0.21617852161785217,
+            "recall_ceiling": 0.24267782426778242,
+            "recall_share_of_ceiling": 0.8908045977011495,
+            "precision": 0.8908045977011494,
+            "dollar_loss": 117531.07210206985,
+            "fraud_dollars_total": 128288.91915345192
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 17325,
+            "n_fraud": 717,
+            "n_flagged": 347,
+            "frauds_flagged": 256,
+            "recall": 0.35704323570432356,
+            "recall_ceiling": 0.4839609483960948,
+            "recall_share_of_ceiling": 0.7377521613832853,
+            "precision": 0.7377521613832853,
+            "dollar_loss": 105790.75906896591,
+            "fraud_dollars_total": 128288.91915345192
+          }
+        }
+      ],
+      "pooled": {
+        "budget_0.01": {
+          "n_windows": 6,
+          "n": 118108,
+          "n_fraud": 4064,
+          "n_flagged": 1184,
+          "frauds_flagged": 972,
+          "recall": 0.23917322834645668,
+          "recall_ceiling": 0.29133858267716534,
+          "recall_share_of_ceiling": 0.8209459459459459,
+          "precision": 0.8209459459459459,
+          "dollar_loss": 527476.6616601944,
+          "fraud_dollars_total": 609934.3356752396
+        },
+        "budget_0.02": {
+          "n_windows": 6,
+          "n": 118108,
+          "n_fraud": 4064,
+          "n_flagged": 2365,
+          "frauds_flagged": 1436,
+          "recall": 0.35334645669291337,
+          "recall_ceiling": 0.5819389763779528,
+          "recall_share_of_ceiling": 0.6071881606765328,
+          "precision": 0.6071881606765328,
+          "dollar_loss": 473885.5906009674,
+          "fraud_dollars_total": 609934.3356752396
+        }
+      },
+      "select_score": 0.7140670533112394
+    },
+    "11": {
+      "model": "dp_logreg",
+      "strategy": "expanding",
+      "every_weeks": 2,
+      "n_runs": 3,
+      "setting_epsilon": 2.0,
+      "params": {
+        "hidden": [],
+        "weight_decay": 0.0,
+        "max_grad_norm": 5.0,
+        "lr": 0.003,
+        "epochs": 20,
+        "batch_size": 1024,
+        "delta": 1e-06,
+        "noise_multiplier": 0.62890625
+      },
+      "runs": [
+        {
+          "week": 0,
+          "label_window": [
+            null,
+            10983300
+          ],
+          "n_train": 434677,
+          "max_train_time": 10983287,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 8500,
+            "last_epoch_loss": 0.10296708138550029,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.561334957532638,
+              "delta": 1e-06,
+              "n_train": 434677,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.002352941176470588,
+              "expected_batch_size": 1022.7694117647058,
+              "epochs": 20,
+              "steps": 8500,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        },
+        {
+          "week": 2,
+          "label_window": [
+            null,
+            12192900
+          ],
+          "n_train": 472432,
+          "max_train_time": 12192842,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 9240,
+            "last_epoch_loss": 0.10247242557957317,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.356306946770964,
+              "delta": 1e-06,
+              "n_train": 472432,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.0021645021645021645,
+              "expected_batch_size": 1022.5800865800866,
+              "epochs": 20,
+              "steps": 9240,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        },
+        {
+          "week": 4,
+          "label_window": [
+            null,
+            13402500
+          ],
+          "n_train": 512470,
+          "max_train_time": 13402475,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 10020,
+            "last_epoch_loss": 0.10481460707005627,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.166390244711353,
+              "delta": 1e-06,
+              "n_train": 512470,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.001996007984031936,
+              "expected_batch_size": 1022.8942115768463,
+              "epochs": 20,
+              "steps": 10020,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        }
+      ],
+      "privacy": {
+        "epsilon_total": 8.0,
+        "epsilon_spent_total": 7.942746665456828,
+        "composition": "sequential (RDP)",
+        "delta": 1e-06
+      },
+      "per_week": [
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 18562,
+            "n_fraud": 640,
+            "n_flagged": 186,
+            "frauds_flagged": 136,
+            "recall": 0.2125,
+            "recall_ceiling": 0.290625,
+            "recall_share_of_ceiling": 0.7311827956989246,
+            "precision": 0.7311827956989247,
+            "dollar_loss": 82437.16600179672,
+            "fraud_dollars_total": 94924.89198350906
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 18562,
+            "n_fraud": 640,
+            "n_flagged": 372,
+            "frauds_flagged": 206,
+            "recall": 0.321875,
+            "recall_ceiling": 0.58125,
+            "recall_share_of_ceiling": 0.553763440860215,
+            "precision": 0.553763440860215,
+            "dollar_loss": 69088.78701066971,
+            "fraud_dollars_total": 94924.89198350906
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 21476,
+            "n_fraud": 663,
+            "n_flagged": 215,
+            "frauds_flagged": 180,
+            "recall": 0.27149321266968324,
+            "recall_ceiling": 0.32428355957767724,
+            "recall_share_of_ceiling": 0.8372093023255813,
+            "precision": 0.8372093023255814,
+            "dollar_loss": 73612.61190128326,
+            "fraud_dollars_total": 87649.69477653503
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 21476,
+            "n_fraud": 663,
+            "n_flagged": 430,
+            "frauds_flagged": 245,
+            "recall": 0.3695324283559578,
+            "recall_ceiling": 0.6485671191553545,
+            "recall_share_of_ceiling": 0.5697674418604651,
+            "precision": 0.5697674418604651,
+            "dollar_loss": 65317.04089641571,
+            "fraud_dollars_total": 87649.69477653503
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 19721,
+            "n_fraud": 560,
+            "n_flagged": 198,
+            "frauds_flagged": 151,
+            "recall": 0.26964285714285713,
+            "recall_ceiling": 0.3535714285714286,
+            "recall_share_of_ceiling": 0.7626262626262625,
+            "precision": 0.7626262626262627,
+            "dollar_loss": 68854.85598754883,
+            "fraud_dollars_total": 86573.58600854874
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 19721,
+            "n_fraud": 560,
+            "n_flagged": 395,
+            "frauds_flagged": 202,
+            "recall": 0.3607142857142857,
+            "recall_ceiling": 0.7053571428571429,
+            "recall_share_of_ceiling": 0.5113924050632911,
+            "precision": 0.5113924050632911,
+            "dollar_loss": 61659.7789645195,
+            "fraud_dollars_total": 86573.58600854874
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 21096,
+            "n_fraud": 741,
+            "n_flagged": 211,
+            "frauds_flagged": 170,
+            "recall": 0.22941970310391363,
+            "recall_ceiling": 0.28475033738191635,
+            "recall_share_of_ceiling": 0.8056872037914691,
+            "precision": 0.8056872037914692,
+            "dollar_loss": 88457.14487957954,
+            "fraud_dollars_total": 101894.3999555111
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 21096,
+            "n_fraud": 741,
+            "n_flagged": 422,
+            "frauds_flagged": 246,
+            "recall": 0.3319838056680162,
+            "recall_ceiling": 0.5695006747638327,
+            "recall_share_of_ceiling": 0.5829383886255924,
+            "precision": 0.5829383886255924,
+            "dollar_loss": 82180.29688358307,
+            "fraud_dollars_total": 101894.3999555111
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 19928,
+            "n_fraud": 743,
+            "n_flagged": 200,
+            "frauds_flagged": 177,
+            "recall": 0.23822341857335128,
+            "recall_ceiling": 0.2691790040376851,
+            "recall_share_of_ceiling": 0.8849999999999999,
+            "precision": 0.885,
+            "dollar_loss": 94261.50480270386,
+            "fraud_dollars_total": 110602.84379768372
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 19928,
+            "n_fraud": 743,
+            "n_flagged": 399,
+            "frauds_flagged": 294,
+            "recall": 0.39569313593539707,
+            "recall_ceiling": 0.5370121130551817,
+            "recall_share_of_ceiling": 0.736842105263158,
+            "precision": 0.7368421052631579,
+            "dollar_loss": 83854.25979685783,
+            "fraud_dollars_total": 110602.84379768372
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 17325,
+            "n_fraud": 717,
+            "n_flagged": 174,
+            "frauds_flagged": 152,
+            "recall": 0.21199442119944212,
+            "recall_ceiling": 0.24267782426778242,
+            "recall_share_of_ceiling": 0.8735632183908046,
+            "precision": 0.8735632183908046,
+            "dollar_loss": 117844.95910644531,
+            "fraud_dollars_total": 128288.91915345192
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 17325,
+            "n_fraud": 717,
+            "n_flagged": 347,
+            "frauds_flagged": 265,
+            "recall": 0.3695955369595537,
+            "recall_ceiling": 0.4839609483960948,
+            "recall_share_of_ceiling": 0.7636887608069165,
+            "precision": 0.7636887608069164,
+            "dollar_loss": 104516.29106760025,
+            "fraud_dollars_total": 128288.91915345192
+          }
+        }
+      ],
+      "pooled": {
+        "budget_0.01": {
+          "n_windows": 6,
+          "n": 118108,
+          "n_fraud": 4064,
+          "n_flagged": 1184,
+          "frauds_flagged": 966,
+          "recall": 0.23769685039370078,
+          "recall_ceiling": 0.29133858267716534,
+          "recall_share_of_ceiling": 0.8158783783783784,
+          "precision": 0.8158783783783784,
+          "dollar_loss": 525468.2426793575,
+          "fraud_dollars_total": 609934.3356752396
+        },
+        "budget_0.02": {
+          "n_windows": 6,
+          "n": 118108,
+          "n_fraud": 4064,
+          "n_flagged": 2365,
+          "frauds_flagged": 1458,
+          "recall": 0.358759842519685,
+          "recall_ceiling": 0.5819389763779528,
+          "recall_share_of_ceiling": 0.6164904862579281,
+          "precision": 0.6164904862579281,
+          "dollar_loss": 466616.4546196461,
+          "fraud_dollars_total": 609934.3356752396
+        }
+      },
+      "select_score": 0.7161844323181532
+    },
+    "12": {
+      "model": "dp_logreg",
+      "strategy": "expanding",
+      "every_weeks": 2,
+      "n_runs": 3,
+      "setting_epsilon": 2.0,
+      "params": {
+        "hidden": [],
+        "weight_decay": 0.0,
+        "max_grad_norm": 5.0,
+        "lr": 0.003,
+        "epochs": 20,
+        "batch_size": 1024,
+        "delta": 1e-06,
+        "noise_multiplier": 0.62890625
+      },
+      "runs": [
+        {
+          "week": 0,
+          "label_window": [
+            null,
+            10983300
+          ],
+          "n_train": 434677,
+          "max_train_time": 10983287,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 8500,
+            "last_epoch_loss": 0.10120886298663476,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.561334957532638,
+              "delta": 1e-06,
+              "n_train": 434677,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.002352941176470588,
+              "expected_batch_size": 1022.7694117647058,
+              "epochs": 20,
+              "steps": 8500,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        },
+        {
+          "week": 2,
+          "label_window": [
+            null,
+            12192900
+          ],
+          "n_train": 472432,
+          "max_train_time": 12192842,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 9240,
+            "last_epoch_loss": 0.10324923607855391,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.356306946770964,
+              "delta": 1e-06,
+              "n_train": 472432,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.0021645021645021645,
+              "expected_batch_size": 1022.5800865800866,
+              "epochs": 20,
+              "steps": 9240,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        },
+        {
+          "week": 4,
+          "label_window": [
+            null,
+            13402500
+          ],
+          "n_train": 512470,
+          "max_train_time": 13402475,
+          "warm_start": false,
+          "epochs": 20,
+          "train_info": {
+            "steps": 10020,
+            "last_epoch_loss": 0.104265688533733,
+            "privacy": {
+              "private": true,
+              "accounting": "composed",
+              "composed_epsilon_total": 8.0,
+              "accountant": "rdp",
+              "target_epsilon": null,
+              "epsilon_spent": 5.166390244711353,
+              "delta": 1e-06,
+              "n_train": 512470,
+              "noise_multiplier": 0.62890625,
+              "max_grad_norm": 5.0,
+              "sample_rate": 0.001996007984031936,
+              "expected_batch_size": 1022.8942115768463,
+              "epochs": 20,
+              "steps": 10020,
+              "poisson_sampling": true,
+              "secure_mode": false,
+              "device": "cuda"
+            }
+          }
+        }
+      ],
+      "privacy": {
+        "epsilon_total": 8.0,
+        "epsilon_spent_total": 7.942746665456828,
+        "composition": "sequential (RDP)",
+        "delta": 1e-06
+      },
+      "per_week": [
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 18562,
+            "n_fraud": 640,
+            "n_flagged": 186,
+            "frauds_flagged": 142,
+            "recall": 0.221875,
+            "recall_ceiling": 0.290625,
+            "recall_share_of_ceiling": 0.7634408602150536,
+            "precision": 0.7634408602150538,
+            "dollar_loss": 80889.28199911118,
+            "fraud_dollars_total": 94924.89198350906
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 18562,
+            "n_fraud": 640,
+            "n_flagged": 372,
+            "frauds_flagged": 204,
+            "recall": 0.31875,
+            "recall_ceiling": 0.58125,
+            "recall_share_of_ceiling": 0.5483870967741935,
+            "precision": 0.5483870967741935,
+            "dollar_loss": 68443.36201906204,
+            "fraud_dollars_total": 94924.89198350906
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 21476,
+            "n_fraud": 663,
+            "n_flagged": 215,
+            "frauds_flagged": 182,
+            "recall": 0.27450980392156865,
+            "recall_ceiling": 0.32428355957767724,
+            "recall_share_of_ceiling": 0.8465116279069768,
+            "precision": 0.8465116279069768,
+            "dollar_loss": 73680.99989700317,
+            "fraud_dollars_total": 87649.69477653503
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 21476,
+            "n_fraud": 663,
+            "n_flagged": 430,
+            "frauds_flagged": 248,
+            "recall": 0.3740573152337858,
+            "recall_ceiling": 0.6485671191553545,
+            "recall_share_of_ceiling": 0.5767441860465116,
+            "precision": 0.5767441860465117,
+            "dollar_loss": 65295.001896858215,
+            "fraud_dollars_total": 87649.69477653503
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 19721,
+            "n_fraud": 560,
+            "n_flagged": 198,
+            "frauds_flagged": 147,
+            "recall": 0.2625,
+            "recall_ceiling": 0.3535714285714286,
+            "recall_share_of_ceiling": 0.7424242424242424,
+            "precision": 0.7424242424242424,
+            "dollar_loss": 69321.83698606491,
+            "fraud_dollars_total": 86573.58600854874
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 19721,
+            "n_fraud": 560,
+            "n_flagged": 395,
+            "frauds_flagged": 201,
+            "recall": 0.35892857142857143,
+            "recall_ceiling": 0.7053571428571429,
+            "recall_share_of_ceiling": 0.5088607594936708,
+            "precision": 0.5088607594936709,
+            "dollar_loss": 62161.37796354294,
+            "fraud_dollars_total": 86573.58600854874
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 21096,
+            "n_fraud": 741,
+            "n_flagged": 211,
+            "frauds_flagged": 166,
+            "recall": 0.22402159244264508,
+            "recall_ceiling": 0.28475033738191635,
+            "recall_share_of_ceiling": 0.7867298578199051,
+            "precision": 0.7867298578199052,
+            "dollar_loss": 89880.55888390541,
+            "fraud_dollars_total": 101894.3999555111
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 21096,
+            "n_fraud": 741,
+            "n_flagged": 422,
+            "frauds_flagged": 249,
+            "recall": 0.3360323886639676,
+            "recall_ceiling": 0.5695006747638327,
+            "recall_share_of_ceiling": 0.5900473933649288,
+            "precision": 0.590047393364929,
+            "dollar_loss": 82146.30588054657,
+            "fraud_dollars_total": 101894.3999555111
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 19928,
+            "n_fraud": 743,
+            "n_flagged": 200,
+            "frauds_flagged": 177,
+            "recall": 0.23822341857335128,
+            "recall_ceiling": 0.2691790040376851,
+            "recall_share_of_ceiling": 0.8849999999999999,
+            "precision": 0.885,
+            "dollar_loss": 94075.4608001709,
+            "fraud_dollars_total": 110602.84379768372
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 19928,
+            "n_fraud": 743,
+            "n_flagged": 399,
+            "frauds_flagged": 287,
+            "recall": 0.38627187079407804,
+            "recall_ceiling": 0.5370121130551817,
+            "recall_share_of_ceiling": 0.719298245614035,
+            "precision": 0.7192982456140351,
+            "dollar_loss": 84388.87079524994,
+            "fraud_dollars_total": 110602.84379768372
+          }
+        },
+        {
+          "budget_0.01": {
+            "budget": 0.01,
+            "n": 17325,
+            "n_fraud": 717,
+            "n_flagged": 174,
+            "frauds_flagged": 155,
+            "recall": 0.21617852161785217,
+            "recall_ceiling": 0.24267782426778242,
+            "recall_share_of_ceiling": 0.8908045977011495,
+            "precision": 0.8908045977011494,
+            "dollar_loss": 117616.35109519958,
+            "fraud_dollars_total": 128288.91915345192
+          },
+          "budget_0.02": {
+            "budget": 0.02,
+            "n": 17325,
+            "n_fraud": 717,
+            "n_flagged": 347,
+            "frauds_flagged": 257,
+            "recall": 0.3584379358437936,
+            "recall_ceiling": 0.4839609483960948,
+            "recall_share_of_ceiling": 0.7406340057636888,
+            "precision": 0.7406340057636888,
+            "dollar_loss": 106453.72506666183,
+            "fraud_dollars_total": 128288.91915345192
+          }
+        }
+      ],
+      "pooled": {
+        "budget_0.01": {
+          "n_windows": 6,
+          "n": 118108,
+          "n_fraud": 4064,
+          "n_flagged": 1184,
+          "frauds_flagged": 969,
+          "recall": 0.23843503937007873,
+          "recall_ceiling": 0.29133858267716534,
+          "recall_share_of_ceiling": 0.8184121621621622,
+          "precision": 0.8184121621621622,
+          "dollar_loss": 525464.4896614552,
+          "fraud_dollars_total": 609934.3356752396
+        },
+        "budget_0.02": {
+          "n_windows": 6,
+          "n": 118108,
+          "n_fraud": 4064,
+          "n_flagged": 2365,
+          "frauds_flagged": 1446,
+          "recall": 0.3558070866141732,
+          "recall_ceiling": 0.5819389763779528,
+          "recall_share_of_ceiling": 0.6114164904862579,
+          "precision": 0.6114164904862579,
+          "dollar_loss": 468888.64362192154,
+          "fraud_dollars_total": 609934.3356752396
+        }
+      },
+      "select_score": 0.71491432632421
+    }
+  }
+}

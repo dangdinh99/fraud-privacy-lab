@@ -1,0 +1,21 @@
+# FINAL test-set evaluation (run once with --final). Identical to configs/report_mlp.yaml except
+# eval_split: test. Settings and seeds frozen in docs/decisions.md; results are reported as is.
+name: final_mlp
+stage: final
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: test
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]
+ece_bins: 10
+device: cuda
+seeds: [10, 11, 12]
+model:
+  type: mlp
+  params:
+    hidden: [128, 64]
+    weight_decay: 0.0
+    batch_size: 1024
+    lr: 0.0003
+    epochs: 10

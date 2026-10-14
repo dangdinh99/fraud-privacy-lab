@@ -1,0 +1,38 @@
+{
+  "source": "data\\raw\\ieee-cis\\train_transaction.csv",
+  "train_frac": 0.6,
+  "val_frac": 0.2,
+  "order": [
+    "TransactionDT",
+    "TransactionID"
+  ],
+  "summary": {
+    "train": {
+      "n": 354324,
+      "n_fraud": 11988,
+      "fraud_rate": 0.03383344057980831,
+      "dt_min": 86400,
+      "dt_max": 8745772,
+      "days": 100.22421296296297,
+      "recall_ceiling_at_0.01": 0.29562896229562896
+    },
+    "val": {
+      "n": 118108,
+      "n_fraud": 4611,
+      "fraud_rate": 0.03904053916754157,
+      "dt_min": 8745798,
+      "dt_max": 12192842,
+      "days": 39.896342592592596,
+      "recall_ceiling_at_0.01": 0.25634352635003255
+    },
+    "test": {
+      "n": 118108,
+      "n_fraud": 4064,
+      "fraud_rate": 0.034409184813899145,
+      "dt_min": 12192900,
+      "dt_max": 15811131,
+      "days": 41.87767361111111,
+      "recall_ceiling_at_0.01": 0.29084645669291337
+    }
+  }
+}

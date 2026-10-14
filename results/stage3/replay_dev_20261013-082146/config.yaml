@@ -1,0 +1,114 @@
+config:
+  name: replay_dev
+  stage: stage3
+  data_dir: data/raw/ieee-cis
+  split_dir: data/splits
+  features_config: configs/features.yaml
+  replay_split: val
+  device: cuda
+  seeds:
+  - 10
+  - 11
+  - 12
+  budgets:
+  - 0.01
+  - 0.02
+  label_delay_days: 14
+  week_days: 7
+  delta: 1.0e-06
+  drift_sample: 50000
+  psi_bins: 10
+  strategies:
+  - expanding
+  - disjoint
+  retrain_every_weeks:
+  - 3
+  - 2
+  - 1
+  hidden:
+    dp_mlp:
+    - 128
+    - 64
+    mlp:
+    - 128
+    - 64
+    dp_logreg: []
+    logreg: []
+  settings:
+    dp_mlp:
+      0.5:
+        max_grad_norm: 0.2
+        lr: 0.003
+        epochs: 10
+        batch_size: 1024
+      1:
+        max_grad_norm: 0.05
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+      2:
+        max_grad_norm: 0.2
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+      4:
+        max_grad_norm: 0.05
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+      8:
+        max_grad_norm: 1.0
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+    dp_logreg:
+      0.5:
+        max_grad_norm: 5.0
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+      1:
+        max_grad_norm: 5.0
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+      2:
+        max_grad_norm: 5.0
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+      4:
+        max_grad_norm: 1.0
+        lr: 0.01
+        epochs: 10
+        batch_size: 1024
+      8:
+        max_grad_norm: 5.0
+        lr: 0.003
+        epochs: 20
+        batch_size: 1024
+    mlp:
+      lr: 0.0003
+      epochs: 10
+      batch_size: 1024
+    logreg:
+      lr: 0.01
+      epochs: 20
+      batch_size: 1024
+  experiments:
+  - name: dp_logreg_eps2
+    model: dp_logreg
+    epsilon_total: 2
+  - name: dp_logreg_eps8
+    model: dp_logreg
+    epsilon_total: 8
+  - name: dp_mlp_eps8
+    model: dp_mlp
+    epsilon_total: 8
+    seeds:
+    - 10
+  - name: logreg
+    model: logreg
+  - name: mlp
+    model: mlp
+final: false

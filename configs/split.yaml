@@ -1,0 +1,6 @@
+# Frozen time split. Built once; see docs/decisions.md before changing anything here.
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+train_frac: 0.6
+val_frac: 0.2
+summary_budget: 0.01  # budget used only for the recall ceiling printed in the summary

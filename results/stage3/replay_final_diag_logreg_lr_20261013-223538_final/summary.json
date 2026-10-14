@@ -1,0 +1,48 @@
+{
+  "replay_split": "test",
+  "final": true,
+  "rows": [
+    {
+      "experiment": "logreg_lr3e-3",
+      "schedule": "none",
+      "mean": 0.7023768879873531,
+      "std": 0.0012728179088086758
+    },
+    {
+      "experiment": "logreg_lr3e-3",
+      "schedule": "expanding_every3",
+      "mean": 0.7065308172866313,
+      "std": 0.0005319475356543216
+    },
+    {
+      "experiment": "logreg_lr3e-3",
+      "schedule": "expanding_every2",
+      "mean": 0.7080091256690094,
+      "std": 0.0018926010128144267
+    },
+    {
+      "experiment": "logreg_lr3e-3",
+      "schedule": "expanding_every1",
+      "mean": 0.7111776946079272,
+      "std": 0.0008528390367388061
+    },
+    {
+      "experiment": "logreg_lr3e-3",
+      "schedule": "disjoint_every3",
+      "mean": 0.6983580104946384,
+      "std": 0.0036735225394283143
+    },
+    {
+      "experiment": "logreg_lr3e-3",
+      "schedule": "disjoint_every2",
+      "mean": 0.703358677123212,
+      "std": 0.0019643247140419804
+    },
+    {
+      "experiment": "logreg_lr3e-3",
+      "schedule": "disjoint_every1",
+      "mean": 0.6942804458792832,
+      "std": 0.001707467589761252
+    }
+  ]
+}

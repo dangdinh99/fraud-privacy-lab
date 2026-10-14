@@ -1,0 +1,43 @@
+# POST-HOC DIAGNOSTIC (not a reported configuration, selects nothing). On the test replay,
+# DP logistic regression scored slightly above non-private logistic regression. Hypothesis:
+# the DP setting's lower learning rate (3e-3 vs 1e-2) generalizes better under drift. This
+# re-runs non-private logistic regression with lr 3e-3; everything else matches replay_final.
+name: replay_final_diag_logreg_lr
+stage: stage3
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+replay_split: test
+device: cuda
+seeds: [10, 11, 12]
+budgets: [0.01, 0.02]
+label_delay_days: 14
+week_days: 7
+delta: 1.0e-06
+drift_sample: 50000
+psi_bins: 10
+strategies: [expanding, disjoint]
+retrain_every_weeks: [3, 2, 1]
+finetune_epochs_fraction: 0.25
+hidden:
+  dp_mlp: [128, 64]
+  mlp: [128, 64]
+  dp_logreg: []
+  logreg: []
+settings:
+  dp_mlp:
+    0.5: {max_grad_norm: 0.2, lr: 0.003, epochs: 10, batch_size: 1024}
+    1: {max_grad_norm: 0.05, lr: 0.003, epochs: 20, batch_size: 1024}
+    2: {max_grad_norm: 0.2, lr: 0.003, epochs: 20, batch_size: 1024}
+    4: {max_grad_norm: 0.05, lr: 0.003, epochs: 20, batch_size: 1024}
+    8: {max_grad_norm: 1.0, lr: 0.003, epochs: 20, batch_size: 1024}
+  dp_logreg:
+    0.5: {max_grad_norm: 5.0, lr: 0.003, epochs: 20, batch_size: 1024}
+    1: {max_grad_norm: 5.0, lr: 0.003, epochs: 20, batch_size: 1024}
+    2: {max_grad_norm: 5.0, lr: 0.003, epochs: 20, batch_size: 1024}
+    4: {max_grad_norm: 1.0, lr: 0.01, epochs: 10, batch_size: 1024}
+    8: {max_grad_norm: 5.0, lr: 0.003, epochs: 20, batch_size: 1024}
+  mlp: {lr: 0.0003, epochs: 10, batch_size: 1024}
+  logreg: {lr: 0.003, epochs: 20, batch_size: 1024}
+experiments:
+- {name: logreg_lr3e-3, model: logreg}

@@ -1,0 +1,24 @@
+# Stage 2 fairness check: the non-private MLP with the larger batch size the DP grid gets.
+# Seeds 0-2 to compare with the stage 1 selection (lr 3e-4, 10 epochs, batch 1024).
+name: mlp_batch4096
+stage: stage2
+data_dir: data/raw/ieee-cis
+split_dir: data/splits
+features_config: configs/features.yaml
+eval_split: val          # test only with --final
+budgets: [0.01, 0.005, 0.02]
+select_budgets: [0.01, 0.02]   # co-primary; ranked by mean share of ceiling over both
+ece_bins: 10
+device: cuda             # DP and MLP training on the GPU (see docs/decisions.md)
+seeds: [0, 1, 2]
+
+model:
+  type: mlp
+  params:
+    hidden: [128, 64]
+    weight_decay: 0.0
+    batch_size: 4096
+
+grid:
+  lr: [0.0003, 0.001]
+  epochs: [10]

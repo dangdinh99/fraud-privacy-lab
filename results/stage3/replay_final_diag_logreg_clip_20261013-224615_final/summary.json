@@ -1,0 +1,48 @@
+{
+  "replay_split": "test",
+  "final": true,
+  "rows": [
+    {
+      "experiment": "dp_logreg_eps8_clip_only",
+      "schedule": "none",
+      "mean": 0.7120267532331486,
+      "std": 0.0026401903833875124
+    },
+    {
+      "experiment": "dp_logreg_eps8_clip_only",
+      "schedule": "expanding_every3",
+      "mean": 0.7222378959297564,
+      "std": 0.0013747658943442892
+    },
+    {
+      "experiment": "dp_logreg_eps8_clip_only",
+      "schedule": "expanding_every2",
+      "mean": 0.7231509985143707,
+      "std": 0.0015954145890266266
+    },
+    {
+      "experiment": "dp_logreg_eps8_clip_only",
+      "schedule": "expanding_every1",
+      "mean": 0.7251941555720626,
+      "std": 0.0007413267768920347
+    },
+    {
+      "experiment": "dp_logreg_eps8_clip_only",
+      "schedule": "disjoint_every3",
+      "mean": 0.7196279260232749,
+      "std": 0.001438295508835684
+    },
+    {
+      "experiment": "dp_logreg_eps8_clip_only",
+      "schedule": "disjoint_every2",
+      "mean": 0.7258958416661905,
+      "std": 0.0023991546536226206
+    },
+    {
+      "experiment": "dp_logreg_eps8_clip_only",
+      "schedule": "disjoint_every1",
+      "mean": 0.7163940631963888,
+      "std": 0.0031918578769472186
+    }
+  ]
+}

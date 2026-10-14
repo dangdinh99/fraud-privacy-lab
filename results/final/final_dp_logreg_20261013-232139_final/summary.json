@@ -1,0 +1,40 @@
+{
+  "select_metric": "mean share of ceiling over select_budgets",
+  "select_budgets": [
+    0.01,
+    0.02
+  ],
+  "eval_split": "test",
+  "ranking": [
+    {
+      "grid_point": "target_epsilon=0.5__max_grad_norm=5.0__lr=0.003__epochs=20",
+      "target_epsilon": 0.5,
+      "mean": 0.6926641427974372,
+      "std": 0.0052755161460371755
+    },
+    {
+      "grid_point": "target_epsilon=1__max_grad_norm=5.0__lr=0.003__epochs=20",
+      "target_epsilon": 1,
+      "mean": 0.7007734511107149,
+      "std": 0.0038139264011665063
+    },
+    {
+      "grid_point": "target_epsilon=2__max_grad_norm=5.0__lr=0.003__epochs=20",
+      "target_epsilon": 2,
+      "mean": 0.7047932868992951,
+      "std": 0.002751081468733748
+    },
+    {
+      "grid_point": "target_epsilon=4__max_grad_norm=1.0__lr=0.01__epochs=10",
+      "target_epsilon": 4,
+      "mean": 0.7090245391026683,
+      "std": 0.005116784909265287
+    },
+    {
+      "grid_point": "target_epsilon=8__max_grad_norm=5.0__lr=0.003__epochs=20",
+      "target_epsilon": 8,
+      "mean": 0.7087422328485374,
+      "std": 0.0014393975530932843
+    }
+  ]
+}

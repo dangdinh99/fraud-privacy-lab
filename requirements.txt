@@ -1,0 +1,22 @@
+# Pinned. torch and opacus are version-sensitive: do not upgrade casually.
+# Python 3.11.
+numpy==2.4.6
+pandas==3.0.6
+scikit-learn==1.9.1
+lightgbm==4.7.0
+torch==2.14.1
+# GPU (used for stage 2+): same version, CUDA 13.0 build, installed with
+#   pip install --force-reinstall --no-deps torch==2.14.1 --index-url https://download.pytorch.org/whl/cu130
+# The CPU build works for everything; configs set device: cpu or cuda.
+opacus==1.6.0
+pyyaml==6.0.3
+pytest==9.1.1
+ruff==0.17.0
+
+# Figures and EDA notebooks only (see docs/decisions.md)
+matplotlib==3.11.2
+jupyter==1.1.1
+
+# Stretch stages only, added when those stages begin:
+# flwr       (stage 5, federated)
+# fastapi    (serving endpoint)
